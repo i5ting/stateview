@@ -7,3 +7,5 @@
 	<Layer  state='c' /> 
 </Stateview>
 ``` 
+
+在组件生命周期里，加载状态机，useStateLoader()
