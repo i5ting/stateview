@@ -1,6 +1,6 @@
 import React, { useEffect, createContext, useState, useContext, useMemo, useRef } from 'react';
 
-import { Stateview, Layer, useStateContext } from '../../../src/index';
+import { Stateview, Layer, useStateContext } from '~/index';
 import { Logined, UnLogin} from '../layers/2';
 import styles from './index.less';
 

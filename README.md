@@ -23,7 +23,7 @@ entry
 ```js
 import React from 'react';
 
-import { Stateview, Layer } from '../../../src/index';
+import { Stateview, Layer } from 'stateview';
 import { Logined, UnLogin } from '../layers/1';
 
 export default () => {
@@ -40,7 +40,7 @@ unlogin
 
 ```js
 import React from 'react';
-import { useStateContext } from '../../../../src/index';
+import { useStateContext } from 'stateview';
 
 export function UnLogin(props: any) {
   const { stateview } = useStateContext()
@@ -57,7 +57,7 @@ logined
 
 ```js
 import React from 'react';
-import { Stateview, Layer, useStateContext } from '../../../../src/index';
+import { Stateview, Layer, useStateContext } from 'stateview';
 import { CanDraw, NotDraw } from './logined/index';
 
 export function Logined(props: any) {

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Stateview, Layer } from '../../../src/index';
+import { Stateview, Layer } from '~/index';
 import { Logined, UnLogin } from '../layers/1';
 
 export default () => {

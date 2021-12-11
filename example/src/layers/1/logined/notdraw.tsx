@@ -1,5 +1,5 @@
 import React from 'react';
-import { useStateContext } from '../../../../../src/index';
+import { useStateContext } from '~/index';
 
 export function NotDraw(props: any) {
   const { stateview } = useStateContext()

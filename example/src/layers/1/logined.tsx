@@ -1,5 +1,5 @@
 import React from 'react';
-import { Stateview, Layer, useStateContext } from '../../../../src/index';
+import { Stateview, Layer, useStateContext } from '~/index';
 import { CanDraw, NotDraw } from './logined/index';
 
 export function Logined(props: any) {
