@@ -1,0 +1,9 @@
+{
+  "extends": "@sapphire/ts-config",
+  "compilerOptions": {
+    "module": "ESNext",
+    "lib": ["ESNext", "DOM"],
+    "moduleResolution": "Node",
+    "jsx": "react"
+  }
+}

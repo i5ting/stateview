@@ -1,0 +1,8 @@
+{
+  "extends": "../tsconfig.base.json",
+  "compilerOptions": {
+    "rootDir": "."
+  },
+  "include": [".", "../src/Augments.d.ts"],
+  "references": [{ "path": "../src" }]
+}
