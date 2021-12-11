@@ -1,6 +1,6 @@
 # stateview
 
-stateview is a view render solution.
+stateview is a react view render solution.
 
 ## Install
 
