@@ -8,6 +8,40 @@ stateview is a view render solution.
 
 ## Usages
 
+
+### Concept
+
+```
+import { Stateview, Layer } from 'stateview';
+```
+
+核心概念
+
+- Stateview组件
+  - 属性
+    - default='unlogin' 默认状态
+    - height="200px" 高度
+- Layer组件
+  - 属性
+    - router='logined' 状态名称
+    - component={<Logined name='跳转到未登录状态' />} 状态对应的视图组件
+
+### Api
+
+在具体的Layer状态对应的视图组件里使用。
+
+```
+import {useStateContext } from 'stateview';
+
+const { stateview } = useStateContext()
+```
+
+API
+
+- stateview.show('router') 显示具体的状态，参数可以是一个，也可以是数组
+
+### Example
+
 state
 
 ```js
