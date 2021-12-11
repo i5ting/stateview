@@ -1,8 +1,6 @@
 import React, { createContext, useContext, useState, useRef, useEffect, Fragment } from 'react';
 import IDebug from 'debug';
 
-var styles = ".stateview {\n  border: 1px dashed lightblue;\n}\n.example {\n  border: 1px dashed red;\n}\n";
-
 var Debug = function Debug(content) {
   return IDebug(content);
 };
@@ -50,7 +48,7 @@ var debug = /*#__PURE__*/Debug("src/state.ts"); // 获取对象
 //  
 
 var SState = function SState(config) {
-  // 处理配置
+  // 处理配置项
   var states = Object.keys(config.GlobalStateMapping); // 对外行为
 
   return Object.assign(config, {
@@ -75,7 +73,7 @@ var SState = function SState(config) {
       var state = this._getStateBy(path); // 如果状态一样，则无需刷新
 
 
-      if (path === state.currentState) {
+      if (path === config.GlobalStateMapping.currentState) {
         console.warn("状态一样，无需刷新");
         return;
       } // 确保状态在states中，完成show切换
@@ -99,6 +97,8 @@ var SState = function SState(config) {
   });
 };
 
+var styles = ".stateview {\n  border: 1px dashed lightblue;\n}\n.example {\n  border: 1px dashed red;\n}\n";
+
 var debug$1 = /*#__PURE__*/Debug("stateview.jsx");
 var count = 0;
 var GlobalStateMapping = {};
@@ -117,9 +117,8 @@ function Stateview(props) {
       child: child,
       component: child.props.component
     };
-  }); // debug(stateViewMapping)
-
-  var stateviewRef = useRef(null); // const { setStateview } = useStateContext()
+  });
+  var stateviewRef = useRef(null);
 
   if (count === 0) {
     GlobalStateMapping.currentState = props["default"];
@@ -127,7 +126,6 @@ function Stateview(props) {
 
   var sState = SState({
     ref: stateviewRef,
-    // states: states,
     GlobalStateMapping: GlobalStateMapping
   });
   debug$1(count++);
@@ -155,9 +153,6 @@ function Stateview(props) {
 }
 
 function Layer(props) {
-  // const { stateContent } = useStateContext()
-  // console.dir(props.component)
-  // console.dir( stateContent )
   return React.createElement(Fragment, null, props.component);
 }
 
