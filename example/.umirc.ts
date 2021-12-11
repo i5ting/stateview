@@ -1,8 +1,11 @@
+import {resolve} from 'path'
 import { defineConfig } from 'umi';
-
 export default defineConfig({
   nodeModulesTransform: {
     type: 'none',
+  },
+  alias: {
+    '~': resolve(process.cwd(), './src')
   },
   routes: [
     { path: '/', component: '@/pages/index' },
