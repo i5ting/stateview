@@ -9,6 +9,7 @@ export default () => {
       <ul >
         <li><a href='/1'>example 1</a></li>
         <li><a href='/2'>example 2</a></li>
+        <li><a href='/3'>example 3</a></li>
       </ul>
     </div>
   );

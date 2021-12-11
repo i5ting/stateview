@@ -8,6 +8,37 @@ stateview is a view render solution.
 
 ## Usages
 
+最小示例，只有Logined和UnLogin二个状态。
+
+```js
+import React from 'react';
+
+import { Stateview, Layer, useStateContext } from '~/index';
+import { Logined, UnLogin } from '../layers/1';
+
+export default () => {
+  const { stateview } = useStateContext()
+
+  function unlogin() {
+    stateview.show('unlogin')
+  }
+
+  function logined() {
+    stateview.show('logined')
+  }
+
+  return (
+    <Stateview default='unlogin' height="200px">
+      <Layer router='logined'>
+        <h1>Logined, <button onClick={unlogin}>go to UnLogin</button></h1>
+      </Layer>
+      <Layer router='unlogin'>
+        <h1 >UnLogin, <button onClick={logined}>go to Logined</button></h1>;
+      </Layer>
+    </Stateview>
+  );
+}
+```
 
 ### Concept
 
@@ -42,7 +73,7 @@ API
 
 ### Example
 
-state
+带嵌套的3个状态示例
 
 ```js
 - root
