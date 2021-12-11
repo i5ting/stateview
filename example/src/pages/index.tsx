@@ -1,21 +1,15 @@
-import React, { useEffect, createContext, useState, useContext, useMemo, useRef } from 'react';
-
-import { Stateview, Layer, useStateContext } from '../../../src/index';
-import { Logined, UnLogin} from '../layers/';
+import React from 'react';
 import styles from './index.less';
 
 export default () => {
 
-  const { stateContent, stateview } = useStateContext()
-
-  function onChange(pre: Object, current: Object) {
-
-  }
- 
   return (
-    <Stateview default='unlogin' height="200px" onStateChange={onChange} >
-      <Layer router='logined' component={<Logined name='跳转到未登录状态' />} />
-      <Layer router='unlogin' component={<UnLogin name='跳转到登录状态' />} />
-    </Stateview>
+    <div className={styles.normal}>
+      <h2>Examples</h2>
+      <ul >
+        <li><a href='/1'>example 1</a></li>
+        <li><a href='/2'>example 2</a></li>
+      </ul>
+    </div>
   );
 }

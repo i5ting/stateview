@@ -54,7 +54,7 @@ export const SState = (config: ICconfig) => {
         show: function (path: string) {
             let state = this._getStateBy(path);
             // 如果状态一样，则无需刷新
-            if (path === state.currentState) {
+            if (path === config.GlobalStateMapping.currentState) {
                 console.warn("状态一样，无需刷新")
                 return
             }

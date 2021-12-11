@@ -1,6 +1,6 @@
 import React from 'react';
  
-import { Stateview, Layer, useStateContext } from '../../../src/index';
+import { Stateview, Layer, useStateContext } from '../../../../src/index';
 
 import { CanDraw, NotDraw } from'./logined/index';
 

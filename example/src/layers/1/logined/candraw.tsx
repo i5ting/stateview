@@ -1,6 +1,6 @@
 import React from 'react';
 
-import {  useStateContext } from '../../../../src/index';
+import {  useStateContext } from '../../../../../src/index';
 
 export function CanDraw(props: any) {
   const { stateContent, stateview } = useStateContext()
