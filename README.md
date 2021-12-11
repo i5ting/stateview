@@ -56,6 +56,7 @@ import { Stateview, Layer } from 'stateview';
   - 属性
     - router='logined' 状态名称
     - component={<Logined name='跳转到未登录状态' />} 状态对应的视图组件
+    - 如果有props.children优先，如无，则展示component
 
 ### Api
 
