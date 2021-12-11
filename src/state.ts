@@ -1,6 +1,4 @@
-// import { createContext, useRef } from "react"
 import type { ICconfig, IState } from './type';
-
 import { Debug } from './debug';
 
 const debug = Debug("src/state.ts")
@@ -26,12 +24,8 @@ const debug = Debug("src/state.ts")
 //     return <h1>Hello, { props.name } < /h1>;
 // }
 //  
-
-
-
 export const SState = (config: ICconfig) => {
-    // 处理配置
-
+    // 处理配置项
     const states = Object.keys(config.GlobalStateMapping)
 
     // 对外行为

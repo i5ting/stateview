@@ -1,14 +1,10 @@
 import React from 'react';
-
-import {  useStateContext } from '../../../../../src/index';
+import { useStateContext } from '../../../../../src/index';
 
 export function CanDraw(props: any) {
-  const { stateContent, stateview } = useStateContext()
-  console.dir("UnLogin")
-  console.dir(stateview.current)
+  const { stateview } = useStateContext()
 
-  function sayHello(){
-    // alert('sayHello')
+  function sayHello() {
     stateview.show('unlogin')
   }
 

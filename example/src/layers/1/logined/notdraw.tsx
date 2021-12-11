@@ -1,25 +1,10 @@
 import React from 'react';
-
-import {  useStateContext } from '../../../../../src/index';
+import { useStateContext } from '../../../../../src/index';
 
 export function NotDraw(props: any) {
-  const { stateContent, stateview } = useStateContext()
-  console.dir("UnLogin")
-  console.dir(stateview.current)
-  // console.dir(stateContent)
+  const { stateview } = useStateContext()
 
-  // useEffect(() => {
-  //   const divElement = stateview;
-
-  //   console.log('WelcomedivElement');
-  //   console.log(stateview); // logs <div>I'm an element</div>
-  // }, [])
-
-  // stateview.setCurrent('2')
-  // stateview.keyframes(from , to)
-
-  function sayHello(){
-    // alert('sayHello')
+  function sayHello() {
     stateview.show('candraw')
     stateview.show('notdraw1')
   }
