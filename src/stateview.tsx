@@ -1,25 +1,21 @@
 import React, { useEffect, useState, useRef } from 'react';
-import styles from './stateview.less';
-
 import { Debug } from './debug';
-
 import { getQueryStringByName } from './utils';
-
 import { GlobalStateContent, StateContext } from './context';
 import { SState } from './state';
 
 import type { ICconfig } from './type';
+import styles from './stateview.less';
 
 const debug = Debug("stateview.jsx")
 
 var count: number = 0;
-
 var GlobalStateMapping: any = {}
 
 export function Stateview(props: any) {
     const [visibaleComponent, setVisibaleComponent] = useState(0);
     // const states = getStates(props.children); 
-    let states:any = []
+    let states: any = []
     // states.for()
     React.Children.forEach(props.children, child => {
         // const childType = { ...child.type }
@@ -27,26 +23,22 @@ export function Stateview(props: any) {
         // console.log(child.name)
         debug(child.props.router)
         states.push(child.props.router)
-   
-        GlobalStateMapping[child.props.router]={
+
+        GlobalStateMapping[child.props.router] = {
             show: setVisibaleComponent,
             child: child,
             component: child.props.component
         }
     })
 
-    // debug(stateViewMapping)
-
     const stateviewRef = useRef(null);
-    // const { setStateview } = useStateContext()
 
     if (count === 0) {
         GlobalStateMapping.currentState = props.default
     }
 
     const sState = SState({
-        ref: stateviewRef, 
-        // states: states,
+        ref: stateviewRef,
         GlobalStateMapping: GlobalStateMapping
     } as ICconfig)
 
@@ -69,10 +61,6 @@ export function Stateview(props: any) {
 
     return (
         <StateContext.Provider value={ctx} >
-            {/* <div ref={stateviewRef} className={styles.stateview}>
-                {props.children}
-            </div>
-            <hr /> */}
             <div ref={stateviewRef} className={styles.example} style={{ height: props.height }}>
                 {visibaleComponent}
             </div>
