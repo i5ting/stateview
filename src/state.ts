@@ -26,27 +26,45 @@ const debug = Debug("src/state.ts")
 //  
 export const SState = (config: ICconfig) => {
     // 处理配置项
-    const states = Object.keys(config.GlobalStateMapping)
 
     // 对外行为
     return Object.assign(config, {
         _vshow: function (path: string, c: any) {
-            let state = this._getStateBy(path);
+            let state = this.getStateBy(path);
             var setVisibaleComponent = state.show
             setVisibaleComponent(c)
         },
         _setCurrent(path: string) {
             config.GlobalStateMapping.currentState = path
         },
-        _getStateBy(path: string) {
+        /**
+         * 根据获取States信息
+         */
+        getStates() {
+            const states = Object.keys(config.GlobalStateMapping)
+            return states
+        },
+        /**
+         * 根据path，获取State信息
+         */
+        getStateBy(path: string) {
             let state = config.GlobalStateMapping[path] as IState;
             return state
+        },
+        /**
+         * 根据path，获取Component信息
+         */
+        getComponentBy(path: string) {
+            let state = this.getStateBy(path);
+            return state.component
         },
         /**
          * 根据path，显示path对应的Layer
          */
         show: function (path: string) {
-            let state = this._getStateBy(path);
+            let state = this.getStateBy(path);
+            let states = this.getStates();
+
             // 如果状态一样，则无需刷新
             if (path === config.GlobalStateMapping.currentState) {
                 console.warn("状态一样，无需刷新")
