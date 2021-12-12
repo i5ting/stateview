@@ -38,7 +38,7 @@ export const SState = (config: ICconfig) => {
             config.GlobalStateMapping.currentState = path
         },
         /**
-         * 根据获取States信息
+         * 获取所有States信息
          */
         getStates() {
             const states = Object.keys(config.GlobalStateMapping)

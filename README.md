@@ -70,7 +70,10 @@ const { stateview } = useStateContext()
 
 API
 
-- stateview.show('router') 显示具体的状态，参数可以是一个，也可以是数组
+- stateview.show(path: string) 显示具体的状态，参数可以是一个，也可以是数组
+- stateview.getStateBy(path: string) 根据path，获取State信息
+- stateview.getComponentBy(path: string) 根据path，获取Component信息
+- stateview.getStates() 获取所有States信息
 
 ### Example
 
