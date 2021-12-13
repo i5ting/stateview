@@ -1,5 +1,4 @@
 export interface IState {
-    currentState: string;
     show: Function;
     component: any;
     [index: string]: any;

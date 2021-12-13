@@ -13,11 +13,9 @@ Stateview is a react view render solution.
 ```js
 import React from 'react';
 
-import { Stateview, Layer, useStateContext } from '~/index';
-import { Logined, UnLogin } from '../layers/1';
+import { Stateview, Layer } from 'stateview';
 
 export default () => {
-  const { stateview } = useStateContext()
 
   function unlogin() {
     stateview.show('unlogin')
@@ -39,6 +37,8 @@ export default () => {
   );
 }
 ```
+
+注意：此时使用的window.stateview
 
 ### Concept
 
@@ -63,7 +63,7 @@ import { Stateview, Layer } from 'stateview';
 在具体的Layer状态对应的视图组件里使用。
 
 ```
-import {useStateContext } from 'stateview';
+import { useStateContext } from 'stateview';
 
 const { stateview } = useStateContext()
 ```
@@ -74,6 +74,8 @@ API
 - stateview.getStateBy(path: string) 根据path，获取State信息
 - stateview.getComponentBy(path: string) 根据path，获取Component信息
 - stateview.getStates() 获取所有States信息
+
+当然，你也可以使用是window.stateview替代useStateContext
 
 ### Example
 

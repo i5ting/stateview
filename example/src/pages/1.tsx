@@ -1,13 +1,28 @@
 import React from 'react';
 
-import { Stateview, Layer } from '~/index';
-import { Logined, UnLogin } from '../layers/1';
+import { Stateview, Layer, useStateContext, Debug } from '~/index';
 
-export default () => {
+export default (props: any) => {
+  const debug = Debug("example1")
+
+  function unlogin() {
+    debug('unlogin')
+    stateview.show('unlogin')
+  }
+
+  function logined() {
+    debug('logined')
+    stateview.show('logined')
+  }
+
   return (
     <Stateview default='unlogin' height="200px">
-      <Layer router='logined' component={<Logined name='跳转到未登录状态' />} />
-      <Layer router='unlogin' component={<UnLogin name='跳转到登录状态' />} />
+      <Layer router='logined'>
+        <h1>Logined, <button onClick={unlogin}>go to UnLogin</button></h1>
+      </Layer>
+      <Layer router='unlogin'>
+        <h1 >UnLogin, <button onClick={logined}>go to Logined</button></h1>
+      </Layer>
     </Stateview>
   );
 }

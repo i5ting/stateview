@@ -12,7 +12,7 @@ const debug = Debug("stateview.jsx")
 var count: number = 0;
 var GlobalStateMapping: any = {}
 
-export function Stateview(props: any) {
+export const Stateview = React.forwardRef((props: any, ref: any) => {
     const [visibaleComponent, setVisibaleComponent] = useState(0);
     // const states = getStates(props.children); 
     let states: any = []
@@ -24,23 +24,30 @@ export function Stateview(props: any) {
         debug(child.props.router)
         states.push(child.props.router)
 
+        let c = child.props.component
+
+        if (!child.props.component) {
+            c = child.props.children
+        }
+
         GlobalStateMapping[child.props.router] = {
             show: setVisibaleComponent,
             child: child,
-            component: child.props.component
+            component: c
         }
     })
 
     const stateviewRef = useRef(null);
 
-    if (count === 0) {
-        GlobalStateMapping.currentState = props.default
-    }
-
     const sState = SState({
         ref: stateviewRef,
         GlobalStateMapping: GlobalStateMapping
     } as ICconfig)
+
+    if (count === 0) {
+        GlobalStateMapping.currentState = props.default
+        window.stateview = sState
+    }
 
     debug(count++)
     debug(sState)
@@ -61,9 +68,9 @@ export function Stateview(props: any) {
 
     return (
         <StateContext.Provider value={ctx} >
-            <div ref={stateviewRef} className={styles.example} style={{ height: props.height }}>
+            <div ref={ref} className={styles.example} style={{ height: props.height }}>
                 {visibaleComponent}
             </div>
         </StateContext.Provider>
     );
-}
+})
