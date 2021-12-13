@@ -42,7 +42,7 @@ export default () => {
 
 ### Concept
 
-```
+```js
 import { Stateview, Layer } from 'stateview';
 ```
 
@@ -62,7 +62,7 @@ import { Stateview, Layer } from 'stateview';
 
 在具体的Layer状态对应的视图组件里使用。
 
-```
+```js
 import { useStateContext } from 'stateview';
 
 const { stateview } = useStateContext()
@@ -146,6 +146,13 @@ export function Logined(props: any) {
     </Stateview>
   </>;
 }
+```
+
+## Run example
+
+```shell
+$ npm i 
+$ npm run dev
 ```
 
 ## Contributing
