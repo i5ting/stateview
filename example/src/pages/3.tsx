@@ -4,13 +4,11 @@ import { Stateview, Layer, useStateContext } from '~/index';
 import { Logined, UnLogin} from '../layers/2';
 import styles from './index.less';
 
+/**
+ * 嵌套+并列的Demo：5个状态切换 
+ */ 
 export default () => {
-
   const { stateContent, stateview } = useStateContext()
-
-  function onChange(pre: Object, current: Object) {
-
-  }
  
   return (
     <Stateview default='unlogin' height="200px" onStateChange={onChange} >

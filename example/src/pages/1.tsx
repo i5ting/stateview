@@ -2,6 +2,9 @@ import React from 'react';
 
 import { Stateview, Layer, useStateContext, Debug } from '~/index';
 
+/**
+ * 最简单的Demo：2个状态切换 
+ */ 
 export default (props: any) => {
   const debug = Debug("example1")
 

@@ -3,6 +3,9 @@ import React from 'react';
 import { Stateview, Layer } from '~/index';
 import { Logined, UnLogin } from '../layers/1';
 
+/**
+ * 嵌套Demo：3个状态切换 
+ */ 
 export default () => {
   return (
     <Stateview default='unlogin' height="200px">
