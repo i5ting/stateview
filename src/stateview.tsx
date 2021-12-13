@@ -66,11 +66,18 @@ export const Stateview = React.forwardRef((props: any, ref: any) => {
     let i = getQueryStringByName('s')
     debug(props.children[i])
 
+    let isBlock = props.block ? true : false
+
     return (
         <StateContext.Provider value={ctx} >
-            <div ref={ref} className={styles.example} style={{ height: props.height }}>
-                {visibaleComponent}
-            </div>
+            {isBlock
+                ? <span ref={ref} className={styles.example} style={{ height: props.height }}>
+                    {visibaleComponent}
+                </span>
+                : <div ref={ref} className={styles.example} style={{ height: props.height }}>
+                    {visibaleComponent}
+                </div>
+            }
         </StateContext.Provider>
     );
 })

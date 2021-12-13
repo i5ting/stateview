@@ -52,6 +52,7 @@ import { Stateview, Layer } from 'stateview';
   - 属性
     - default='unlogin' 默认状态
     - height="200px" 高度
+    - block 是否为块级元素，默认div，如果有block，显示为span
 - Layer组件
   - 属性
     - router='logined' 状态名称
