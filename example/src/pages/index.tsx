@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './index.less';
+import routers from '../../.umirc';
 
 export default () => {
 
@@ -12,6 +13,7 @@ export default () => {
         <li><a href='/3'>example 3</a></li>
         <li><a href='/4'>example 4</a></li>
         <li><a href='/5'>example 5</a></li>
+        <li><a href='/6'>example 6</a></li>
       </ul>
     </div>
   );
