@@ -11,6 +11,7 @@ export default () => {
         <li><a href='/2'>example 2</a></li>
         <li><a href='/3'>example 3</a></li>
         <li><a href='/4'>example 4</a></li>
+        <li><a href='/5'>example 5</a></li>
       </ul>
     </div>
   );

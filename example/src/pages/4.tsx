@@ -1,6 +1,5 @@
 import React from 'react';
-
-import { Stateview, Layer, useStateContext, Debug } from '~/index';
+import { Stateview, Layer, Debug } from '~/index';
 
 /**
  * block demo：2个状态切换 
