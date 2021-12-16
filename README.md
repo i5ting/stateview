@@ -99,7 +99,7 @@ import { Logined, UnLogin } from '../layers/1';
 
 export default () => {
   return (
-    <Stateview default='unlogin' height="200px">
+    <Stateview default='unlogin'>
       <Layer router='logined' component={<Logined name='跳转到未登录状态' />} />
       <Layer router='unlogin' component={<UnLogin name='跳转到登录状态' />} />
     </Stateview>
@@ -140,7 +140,7 @@ export function Logined(props: any) {
 
   return <>
     <h1>Logined, <button onClick={sayHello}>{props.name}</button></h1>
-    <Stateview default='notdraw' height="200px" >
+    <Stateview default='notdraw'>
       <Layer router='candraw' component={<CanDraw name='跳转到未登录状态' />} />
       <Layer router='notdraw' component={<NotDraw name='跳转到可领状态' />} />
     </Stateview>
@@ -166,7 +166,7 @@ header假设有2个，由2个stateview并排显示即可，每个header item有�
 ```js
 export function Header(props: any) {
   return <>
-    <Stateview block default='play1' height="200px" >
+    <Stateview nonblock default='play1' >
       <Layer router='play0' component={<Play0 />} />
       <Layer router='play1' component={<Play1 />} />
     </Stateview>
@@ -183,7 +183,7 @@ panel就1个stateview，里面内嵌2个layer即可
 ```js
 export function Panel(props: any) {
   return <>
-    <Stateview default='p1' height="200px">
+    <Stateview default='p1'>
       <Layer router='p1' component={<P1/>} />
       <Layer router='p2' component={<P2/>} />
     </Stateview>
