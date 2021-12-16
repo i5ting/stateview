@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useLayoutEffect, useState, useRef } from 'react';
 import { Debug } from './debug';
 import { getQueryStringByName } from './utils';
 import { GlobalStateContent, StateContext } from './context';
@@ -57,7 +57,7 @@ export const Stateview = React.forwardRef((props: any, ref: any) => {
         stateview: sState
     } as GlobalStateContent;
 
-    useEffect(() => {
+    useLayoutEffect(() => {
         // show default
         const d = GlobalStateMapping[props.default]
         d.show(d.component)
