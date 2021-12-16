@@ -26,7 +26,7 @@ export default () => {
   }
 
   return (
-    <Stateview default='unlogin' height="200px">
+    <Stateview default='unlogin'>
       <Layer router='logined'>
         <h1>Logined, <button onClick={unlogin}>go to UnLogin</button></h1>
       </Layer>
@@ -170,7 +170,7 @@ export function Header(props: any) {
       <Layer router='play0' component={<Play0 />} />
       <Layer router='play1' component={<Play1 />} />
     </Stateview>
-    <Stateview block default='like0' height="200px" >
+    <Stateview nonblock default='like0' height="200px" >
       <Layer router='like0' component={<Like0 />} />
       <Layer router='like1' component={<Like1 />} />
     </Stateview>
