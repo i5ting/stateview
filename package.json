@@ -1,6 +1,6 @@
 {
   "name": "stateview",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "",
   "main": "dist/index.js",
   "module": "dist/stateview.esm.js",
