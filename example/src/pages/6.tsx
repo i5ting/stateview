@@ -3,7 +3,7 @@ import { Stateview, Layer, useStateContext } from '~/index';
 import { Tab } from '../layers/6';
 
 /**
- * 嵌套+并列的Demo：5个状态切换 
+ * Tab：2个tab切换 
  */ 
 export default () => {
   return (

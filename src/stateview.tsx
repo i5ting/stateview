@@ -71,10 +71,10 @@ export const Stateview = React.forwardRef((props: any, ref: any) => {
     return (
         <StateContext.Provider value={ctx} >
             {isBlock
-                ? <span ref={ref} className={styles.example} style={{ height: props.height }}>
+                ? <span ref={ref} {...props}>
                     {visibaleComponent}
                 </span>
-                : <div ref={ref} className={styles.example} style={{ height: props.height }}>
+                : <div ref={ref} {...props}>
                     {visibaleComponent}
                 </div>
             }

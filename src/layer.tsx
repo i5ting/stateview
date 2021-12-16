@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 
 interface LayerProps {
-    key: string;
+    router: string;
     component: any;
 }
 
