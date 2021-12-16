@@ -11,7 +11,7 @@ export function Logined(props: any) {
 
   return <>
     <h1>Logined, <button onClick={sayHello}>{props.name}</button></h1>
-    <Stateview default='notdraw' height="200px" >
+    <Stateview default='notdraw'>
       <Layer router='candraw' component={<CanDraw name='跳转到未登录状态' />} />
       <Layer router='notdraw' component={<NotDraw name='跳转到可领状态' />} />
     </Stateview>

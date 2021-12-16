@@ -3,9 +3,7 @@ import { Debug } from './debug';
 import { getQueryStringByName } from './utils';
 import { GlobalStateContent, StateContext } from './context';
 import { SState } from './state';
-
 import type { ICconfig } from './type';
-import styles from './stateview.less';
 
 const debug = Debug("stateview.jsx")
 
@@ -24,16 +22,16 @@ export const Stateview = React.forwardRef((props: any, ref: any) => {
         debug(child.props.router)
         states.push(child.props.router)
 
-        let c = child.props.component
+        let component = child.props.component
 
         if (!child.props.component) {
-            c = child.props.children
+            component = child.props.children
         }
 
         GlobalStateMapping[child.props.router] = {
             show: setVisibaleComponent,
             child: child,
-            component: c
+            component: component
         }
     })
 
@@ -66,11 +64,11 @@ export const Stateview = React.forwardRef((props: any, ref: any) => {
     let i = getQueryStringByName('s')
     debug(props.children[i])
 
-    let isBlock = props.block ? true : false
+    let isNonBlock = props.nonblock ? true : false
 
     return (
         <StateContext.Provider value={ctx} >
-            {isBlock
+            {isNonBlock
                 ? <span ref={ref} {...props}>
                     {visibaleComponent}
                 </span>

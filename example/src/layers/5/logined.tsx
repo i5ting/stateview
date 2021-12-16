@@ -11,11 +11,11 @@ export function Logined(props: any) {
 
   return <>
     <div>Logined, <button onClick={sayHello}>{props.name}</button></div>
-    <Stateview block default='play0' height="200px" >
+    <Stateview nonblock default='play0'>
       <Layer router='play0' component={<Play0 name='跳转到未登录状态' />} />
       <Layer router='play1' component={<Play1 name='跳转到可领状态' />} />
     </Stateview>
-    <Stateview block default='like0' height="200px" >
+    <Stateview nonblock default='like0'>
       <Layer router='like0' component={<Like0 name='跳转到未登录状态' />} />
       <Layer router='like1' component={<Like1 name='跳转到可领状态' />} />
     </Stateview>

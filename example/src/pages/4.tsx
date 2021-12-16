@@ -18,7 +18,7 @@ export default (props: any) => {
   }
 
   return (
-    <Stateview block default='unlogin' height="200px">
+    <Stateview nonblock default='unlogin' height="200px">
       <Layer router='logined'>
         Logined, <button onClick={unlogin}>go to UnLogin</button>
       </Layer>

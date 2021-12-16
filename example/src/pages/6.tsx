@@ -7,7 +7,7 @@ import { Tab } from '../layers/6';
  */ 
 export default () => {
   return (
-    <Stateview block default='default' height="200px">
+    <Stateview nonblock default='default'>
       <Layer router='default' component={<Tab />} />
     </Stateview>
   );
