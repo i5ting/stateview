@@ -10,7 +10,7 @@
 <br />
 
 <div align="center">
-  <strong>Stateview is a react view render solution.</strong>
+  <strong> a react render solution for Multi-State View.</strong>
 </div>
 <br />
 
