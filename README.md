@@ -2,6 +2,12 @@
 
 Stateview is a react view render solution.
 
+## Preview
+
+Preview the example live on [StackBlitz](http://stackblitz.com/):
+
+[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/i5ting/stateview)
+
 ## Install
 
     $ npm install --save stateview
