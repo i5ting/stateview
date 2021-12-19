@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Stateview /> component Truthy cases With NODE_ENV === test GIVEN <Then /> THEN renders children 1`] = `
+exports[`<Stateview /> component Truthy cases Stateview GIVEN <Stateview /> default renders children 1`] = `
 <ForwardRef
   default="unlogin"
 >
@@ -10,6 +10,7 @@ exports[`<Stateview /> component Truthy cases With NODE_ENV === test GIVEN <Then
     <h1>
       Logined, 
       <button
+        id="go_to_unlogin_button"
         onClick={[Function]}
       >
         go to UnLogin
@@ -22,6 +23,7 @@ exports[`<Stateview /> component Truthy cases With NODE_ENV === test GIVEN <Then
     <h1>
       UnLogin, 
       <button
+        id="go_to_logined_button"
         onClick={[Function]}
       >
         go to Logined
