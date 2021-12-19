@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Stateview /> component Truthy cases With NODE_ENV === test GIVEN <Then /> THEN renders children 1`] = `
+<ForwardRef
+  default="unlogin"
+>
+  <Layer
+    router="logined"
+  >
+    <h1>
+      Logined, 
+      <button
+        onClick={[Function]}
+      >
+        go to UnLogin
+      </button>
+    </h1>
+  </Layer>
+  <Layer
+    router="unlogin"
+  >
+    <h1>
+      UnLogin, 
+      <button
+        onClick={[Function]}
+      >
+        go to Logined
+      </button>
+    </h1>
+    ;
+  </Layer>
+</ForwardRef>
+`;
