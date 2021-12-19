@@ -14,17 +14,17 @@
 </div>
 <br />
 
-## Preview
+## 预览
 
-Preview the example live on [StackBlitz](http://stackblitz.com/):
+可以通过[StackBlitz](http://stackblitz.com/)进行线上预览:
 
 [![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/i5ting/stateview)
 
-## Install
+## 按照
 
     $ npm install --save stateview
 
-## Usages
+## 用法
 
 最小示例，只有Logined和UnLogin二个状态。
 
@@ -58,7 +58,7 @@ export default () => {
 
 注意：此时使用的window.stateview
 
-### Concept
+### 核心概念
 
 ```js
 import { Stateview, Layer } from 'stateview';
@@ -95,7 +95,7 @@ API
 
 当然，你也可以使用是window.stateview替代useStateContext
 
-### Example
+### 示例
 
 带嵌套的3个状态示例
 
@@ -166,7 +166,7 @@ export function Logined(props: any) {
 }
 ```
 
-## Desgin
+## 设计
 
 使用stateview首先你需要改变一下设计思维。从状态的角度去思考组成的组成。下面以tab为例
 
@@ -231,7 +231,7 @@ export function Like0(props: any) {
 
 这样实现状态非常快，且清晰
 
-## Run example
+## 运行示例方法
 
 ```shell
 $ npm i 
