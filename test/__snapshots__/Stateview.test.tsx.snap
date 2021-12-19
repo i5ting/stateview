@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Stateview /> component Truthy cases Stateview GIVEN <Stateview /> default renders children 1`] = `
+<ForwardRef
+  default="unlogin"
+>
+  <Layer
+    router="logined"
+  >
+    <h1>
+      Logined, 
+      <button
+        id="go_to_unlogin_button"
+        onClick={[Function]}
+      >
+        go to UnLogin
+      </button>
+    </h1>
+  </Layer>
+  <Layer
+    router="unlogin"
+  >
+    <h1>
+      UnLogin, 
+      <button
+        id="go_to_logined_button"
+        onClick={[Function]}
+      >
+        go to Logined
+      </button>
+    </h1>
+    ;
+  </Layer>
+</ForwardRef>
+`;

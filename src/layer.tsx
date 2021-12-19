@@ -2,7 +2,8 @@ import React, { Fragment } from 'react';
 
 interface LayerProps {
     router: string;
-    component: any;
+    component?: any;
+    children?: any;
 }
 
 export function Layer(props: LayerProps) {
