@@ -1,6 +1,6 @@
  
 <div>
-简体中文 ｜ <a href="./README_EN.md">English</a>
+  <a href="./README.md">简体中文</a> ｜ English
 </div>
 
 <h1 align="center"> Stateview </h1>
