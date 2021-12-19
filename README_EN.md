@@ -26,7 +26,7 @@ Preview the example live on [StackBlitz](http://stackblitz.com/):
 
 ## Usages
 
-最小示例，只有Logined和UnLogin二个状态。
+The smallest example，only have 2 states ： Logined and UnLogin。
 
 ```js
 import React from 'react';
@@ -56,7 +56,7 @@ export default () => {
 }
 ```
 
-注意：此时使用的window.stateview
+Note：in this example use window.stateview api
 
 ### Concept
 
@@ -64,17 +64,17 @@ export default () => {
 import { Stateview, Layer } from 'stateview';
 ```
 
-核心概念
+Core Concept
 
-- Stateview组件
-  - 属性
-    - default='unlogin' 默认状态
-    - nonblock 是否为块级元素，默认div，如果有nonblock，显示为span
-- Layer组件
-  - 属性
-    - router='logined' 状态名称
-    - component={<Logined name='跳转到未登录状态' />} 状态对应的视图组件
-    - 如果有props.children优先，如无，则展示component
+- Stateview Component 
+  - Props
+    - default='unlogin' show default state
+    - nonblock non block element，default show div，if props have nonblock，show span
+- Layer Component
+  - Props
+    - router='logined' router is a state name or path
+    - component={<Logined name='somename' />} a view component rendered for router
+    - if props has children，show children prior。if no childer，show the  component prop
 
 ### Api
 
