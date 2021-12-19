@@ -1,7 +1,7 @@
 {
   "name": "stateview",
   "version": "1.0.3",
-  "description": "",
+  "description": "a react render solution for Multi-State View.",
   "main": "dist/index.js",
   "module": "dist/stateview.esm.js",
   "typings": "dist/index.d.ts",
@@ -9,7 +9,11 @@
     "type": "git",
     "url": "git+https://github.com/i5ting/stateview.git"
   },
-  "keywords": [],
+  "keywords": [
+    "react",
+    "state",
+    "render"
+  ],
   "bugs": {
     "url": "https://github.com/i5ting/stateview/issues"
   },
