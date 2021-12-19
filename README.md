@@ -20,7 +20,7 @@
 
 [![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/i5ting/stateview)
 
-## 按照
+## 安装
 
     $ npm install --save stateview
 
