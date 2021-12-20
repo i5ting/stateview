@@ -25,6 +25,11 @@
 
 ## Features
 
+<div align="center">
+  <img src="https://img.alicdn.com/imgextra/i3/O1CN01mspQkq1mGc9AnkL9V_!!6000000004927-2-tps-2448-1372.png" width="500" />
+</div>
+<br />
+
 - Compatible with the React Component
 - Built-in the Multi-State View with {Stateview , Layer}
 - Customize the Data via React Component props.data
