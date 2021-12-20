@@ -45,7 +45,7 @@
 
 下面是3个示例，展示Stateview在多状态视图切换功能上的抽象和能力。
 
-- 示例1：最小示例，只有Logined和UnLogin二个状态，纯UI展示型
+- 示例1：最小示例，只有Logined和UnLogin二个状态，纯UI展示型，通过stateview.show切换视图
 - 示例2：通过stateview.datashow切换状态来控制视图展示，视图组件在切换的时候，根据props.data进行渲染
 - 示例3：嵌套示例，主要演示复杂场景里多状态视图切换。
 
