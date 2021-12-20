@@ -70,10 +70,10 @@ export default () => {
 
   return (
     <Stateview default='unlogin'>
-      <Layer router='logined'>
+      <Layer state='logined'>
         <h1>Logined, <button onClick={unlogin}>go to UnLogin</button></h1>
       </Layer>
-      <Layer router='unlogin'>
+      <Layer state='unlogin'>
         <h1 >UnLogin, <button onClick={logined}>go to Logined</button></h1>;
       </Layer>
     </Stateview>
@@ -109,8 +109,8 @@ export default (props: any) => {
 
   return (
     <Stateview default='unlogin' data={{ name: 'somename' }}>
-      <Layer router='logined' component={<Logined />} />
-      <Layer router='unlogin' component={<UnLogin action={logined} />} />
+      <Layer state='logined' component={<Logined />} />
+      <Layer state='unlogin' component={<UnLogin action={logined} />} />
     </Stateview>
   );
 }
@@ -139,8 +139,8 @@ import { Logined, UnLogin } from '../layers/1';
 export default () => {
   return (
     <Stateview default='unlogin'>
-      <Layer router='logined' component={<Logined name='跳转到未登录状态' />} />
-      <Layer router='unlogin' component={<UnLogin name='跳转到登录状态' />} />
+      <Layer state='logined' component={<Logined name='跳转到未登录状态' />} />
+      <Layer state='unlogin' component={<UnLogin name='跳转到登录状态' />} />
     </Stateview>
   );
 }
@@ -180,8 +180,8 @@ export function Logined(props: any) {
   return <>
     <h1>Logined, <button onClick={sayHello}>{props.name}</button></h1>
     <Stateview default='notdraw'>
-      <Layer router='candraw' component={<CanDraw name='跳转到未登录状态' />} />
-      <Layer router='notdraw' component={<NotDraw name='跳转到可领状态' />} />
+      <Layer state='candraw' component={<CanDraw name='跳转到未登录状态' />} />
+      <Layer state='notdraw' component={<NotDraw name='跳转到可领状态' />} />
     </Stateview>
   </>;
 }

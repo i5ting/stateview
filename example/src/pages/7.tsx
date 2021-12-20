@@ -10,8 +10,8 @@ import styles from './index.less';
 export default () => {
   return (
     <Stateview default='unlogin' className={styles.panel} data={{name: 'defaultname'}}>
-      <Layer router='logined' component={<Logined name='跳转到未登录状态'  />} />
-      <Layer router='unlogin' component={<UnLogin name='跳转到登录状态' data={{name:'s'}} />} />
+      <Layer state='logined' component={<Logined name='跳转到未登录状态'  />} />
+      <Layer state='unlogin' component={<UnLogin name='跳转到登录状态' data={{name:'s'}} />} />
     </Stateview>
   );
 }

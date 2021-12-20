@@ -8,8 +8,8 @@
 export default () => {
   return (
     <Stateview default='unlogin' className={styles.panel} data={{name: 'defaultname'}}>
-      <Layer router='logined' component={<Logined name='跳转到未登录状态'  />} />
-      <Layer router='unlogin' component={<UnLogin name='跳转到登录状态'  />} />
+      <Layer state='logined' component={<Logined name='跳转到未登录状态'  />} />
+      <Layer state='unlogin' component={<UnLogin name='跳转到登录状态'  />} />
     </Stateview>
   );
 }
@@ -47,8 +47,8 @@ export function Logined(props: any) {
 export default () => {
   return (
     <Stateview default='unlogin' className={styles.panel} data={{name: 'defaultname'}}>
-      <Layer router='logined' component={<Logined name='跳转到未登录状态'  />} />
-      <Layer router='unlogin' component={<UnLogin name='跳转到登录状态' data={{name:'s'}} />} />
+      <Layer state='logined' component={<Logined name='跳转到未登录状态'  />} />
+      <Layer state='unlogin' component={<UnLogin name='跳转到登录状态' data={{name:'s'}} />} />
     </Stateview>
   );
 }
@@ -74,10 +74,10 @@ export default (props: any) => {
 
   return (
     <Stateview default='unlogin'>
-      <Layer router='logined'>
+      <Layer state='logined'>
         <h1>Logined, <button onClick={unlogin}>go to UnLogin</button></h1>
       </Layer>
-      <Layer router='unlogin'>
+      <Layer state='unlogin'>
         <h1 >UnLogin, <button onClick={logined}>go to Logined</button></h1>
       </Layer>
     </Stateview>

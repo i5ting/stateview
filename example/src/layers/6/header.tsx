@@ -6,12 +6,12 @@ import styles from './tab.less';
 export function Header(props: any) {
   return <div className={styles.header}>
     <Stateview nonblock default='play1'>
-      <Layer router='play0' component={<Play0 />} />
-      <Layer router='play1' component={<Play1 />} />
+      <Layer state='play0' component={<Play0 />} />
+      <Layer state='play1' component={<Play1 />} />
     </Stateview>
     <Stateview nonblock default='like0'>
-      <Layer router='like0' component={<Like0 />} />
-      <Layer router='like1' component={<Like1 />} />
+      <Layer state='like0' component={<Like0 />} />
+      <Layer state='like1' component={<Like1 />} />
     </Stateview>
   </div>;
 }

@@ -20,10 +20,10 @@ export default (props: any) => {
 
   return (
     <Stateview default='unlogin'>
-      <Layer router='logined'>
+      <Layer state='logined'>
         <h1>Logined, <button onClick={unlogin}>go to UnLogin</button></h1>
       </Layer>
-      <Layer router='unlogin'>
+      <Layer state='unlogin'>
         <h1 >UnLogin, <button onClick={logined}>go to Logined</button></h1>
       </Layer>
     </Stateview>

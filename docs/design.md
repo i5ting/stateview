@@ -18,12 +18,12 @@ header假设有2个，由2个stateview并排显示即可，每个header item有�
 export function Header(props: any) {
   return <>
     <Stateview nonblock default='play1' >
-      <Layer router='play0' component={<Play0 />} />
-      <Layer router='play1' component={<Play1 />} />
+      <Layer state='play0' component={<Play0 />} />
+      <Layer state='play1' component={<Play1 />} />
     </Stateview>
     <Stateview nonblock default='like0' height="200px" >
-      <Layer router='like0' component={<Like0 />} />
-      <Layer router='like1' component={<Like1 />} />
+      <Layer state='like0' component={<Like0 />} />
+      <Layer state='like1' component={<Like1 />} />
     </Stateview>
   </>;
 }
@@ -35,8 +35,8 @@ panel就1个stateview，里面内嵌2个layer即可
 export function Panel(props: any) {
   return <>
     <Stateview default='p1'>
-      <Layer router='p1' component={<P1/>} />
-      <Layer router='p2' component={<P2/>} />
+      <Layer state='p1' component={<P1/>} />
+      <Layer state='p2' component={<P2/>} />
     </Stateview>
   </>;
 }

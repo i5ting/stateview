@@ -19,8 +19,8 @@ export const Stateview = React.forwardRef((props: any, ref: any) => {
         // const childType = { ...child.type }
         debug(child)
         // console.log(child.name)
-        debug(child.props.router)
-        states.push(child.props.router)
+        debug(child.props.state)
+        states.push(child.props.state)
 
         let component = child.props.component
 
@@ -28,7 +28,7 @@ export const Stateview = React.forwardRef((props: any, ref: any) => {
             component = child.props.children
         }
 
-        GlobalStateMapping[child.props.router] = {
+        GlobalStateMapping[child.props.state] = {
             show: setVisibaleComponent,
             child: child,
             component: component

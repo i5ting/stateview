@@ -13,6 +13,6 @@ import { Stateview, Layer } from 'stateview';
     - nonblock 是否为块级元素，默认div，如果有nonblock，显示为span
 - Layer组件
   - 属性
-    - router='logined' 状态名称
+    - state='logined' 状态名称
     - component={<Logined name='跳转到未登录状态' />} 状态对应的视图组件
     - 如果有props.children优先，如无，则展示component

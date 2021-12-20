@@ -8,8 +8,8 @@ import { Logined, UnLogin} from '../layers/5';
 export default () => {
   return (
     <Stateview nonblock default='unlogin'>
-      <Layer router='logined' component={<Logined name='跳转到未登录状态' />} />
-      <Layer router='unlogin' component={<UnLogin name='跳转到登录状态' />} />
+      <Layer state='logined' component={<Logined name='跳转到未登录状态' />} />
+      <Layer state='unlogin' component={<UnLogin name='跳转到登录状态' />} />
     </Stateview>
   );
 }
