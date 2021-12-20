@@ -23,7 +23,7 @@ export default (props: any) => {
   }
 
   return (
-    <Stateview default='unlogin' data={{ name: 'aaa' }}>
+    <Stateview default='unlogin' data={{ name: 'somename' }}>
       <Layer router='logined' component={<Logined />} />
       <Layer router='unlogin' component={<UnLogin action={logined} />} />
     </Stateview>
