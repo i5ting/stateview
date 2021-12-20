@@ -14,6 +14,11 @@
 </div>
 <br />
 
+<div align="center">
+  <a href="https://badge.fury.io/js/stateview"><img src="https://badge.fury.io/js/stateview.svg" alt="npm version" height="18"></a>
+</div>
+<br />
+
 ## Preview
 
 Preview the example live on [StackBlitz](http://stackblitz.com/):

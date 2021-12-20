@@ -14,6 +14,11 @@
 </div>
 <br />
 
+<div align="center">
+  <a href="https://badge.fury.io/js/stateview"><img src="https://badge.fury.io/js/stateview.svg" alt="npm version" height="18"></a>
+</div>
+<br />
+
 ## 预览
 
 可以通过[StackBlitz](http://stackblitz.com/)进行线上预览:
