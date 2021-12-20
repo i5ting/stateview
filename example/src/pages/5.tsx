@@ -1,5 +1,5 @@
 import React from 'react';
-import { Stateview, Layer, useStateContext } from '~/index';
+import { Stateview, Layer } from '~/index';
 import { Logined, UnLogin} from '../layers/5';
 
 /**

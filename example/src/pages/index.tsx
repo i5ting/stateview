@@ -3,7 +3,6 @@ import styles from './index.less';
 import routers from '../../.umirc';
 
 export default () => {
-
   return (
     <div className={styles.normal}>
       <h2>Examples</h2>
@@ -14,6 +13,8 @@ export default () => {
         <li><a href='/4'>example 4</a></li>
         <li><a href='/5'>example 5</a></li>
         <li><a href='/6'>example 6</a></li>
+        <li><a href='/7'>example 7: datashow</a></li>
+        <li><a href='/7'>example 8: datashow</a></li>
       </ul>
     </div>
   );
