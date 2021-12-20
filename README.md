@@ -247,7 +247,7 @@ $ npm i
 $ npm run dev
 ```
 
-## Contributing
+## 参与贡献
 
 1. Fork it
 2. Create your feature branch (`git checkout -b my-new-feature`)
@@ -255,18 +255,10 @@ $ npm run dev
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create new Pull Request
 
-## 版本历史
-
-- v1.0.0 初始化版本
-
-## 欢迎fork和反馈
-
-- write by `i5ting` i5ting@126.com
-
-如有建议或意见，请在issue提问或邮件
+Refer to the [CONTRIBUTING](./CONTRIBUTING.md).
 
 ## License
 
-this repo is released under the [MIT
-License](http://www.opensource.org/licenses/MIT).
- 
+Copyright © i5ting. All rights reserved.
+
+Licensed under the MIT license.
