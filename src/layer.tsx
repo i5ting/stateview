@@ -4,6 +4,7 @@ interface LayerProps {
     router: string;
     component?: any;
     children?: any;
+    data?: any;
 }
 
 export function Layer(props: LayerProps) {

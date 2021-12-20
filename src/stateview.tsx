@@ -57,8 +57,17 @@ export const Stateview = React.forwardRef((props: any, ref: any) => {
 
     useLayoutEffect(() => {
         // show default
-        const d = GlobalStateMapping[props.default]
-        d.show(d.component)
+        let d = GlobalStateMapping[props.default]
+        let _component = d.component
+        if (props.data) {
+            _component = React.cloneElement(
+                d.component,
+                {
+                    data: props.data
+                }
+            )
+        }
+        d.show(_component)
     }, [])
 
     let i = getQueryStringByName('s')
