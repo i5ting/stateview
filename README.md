@@ -28,7 +28,7 @@
 - Compatible with the React Component
 - Built-in the Multi-State View with {Stateview , Layer}
 - Customize the Data via React Component props.data
-- Built-in Switch State, and view render features
+- Built-in Switch State, and Data render features
 - Support the Nested View
 
 ## 预览
