@@ -31,7 +31,7 @@
     "lint": "eslint src test demo --fix",
     "format": "prettier --write \"{src,tests}/**/*.{ts,tsx}\"",
     "update": "yarn upgrade-interactive",
-    "docs": "typedoc",
+    "doc": "typedoc",
     "sversion": "standard-version",
     "prepublishOnly": "yarn build",
     "prepare": "husky install .github/husky",

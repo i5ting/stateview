@@ -1,6 +1,6 @@
 {
   "cleanOutputDir": true,
-  "entryPoints": ["src/index.tsx"],
+  "entryPoints": ["src/index.ts"],
   "excludeExternals": false,
   "hideGenerator": true,
   "lightHighlightTheme": "github-light",
@@ -10,8 +10,8 @@
     "mangle": false,
     "smartypants": true
   },
-  "name": "react-if",
-  "out": "./docs/",
+  "name": "stateview",
+  "out": "./doc/",
   "readme": "./README.md",
   "tsconfig": "./src/tsconfig.json"
 }
