@@ -83,7 +83,6 @@
     "yorkie": "^2.0.0"
   },
   "dependencies": {
-    "debug": "^4.3.3",
-    "path-to-regexp": "^6.2.0"
+    "debug": "^4.3.3"
   }
 }
