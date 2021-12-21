@@ -25,6 +25,7 @@ const debug = Debug("src/state.ts")
 //     return <h1>Hello, { props.name } < /h1>;
 // }
 //  
+
 export const SState = (config: ICconfig) => {
     // 处理配置项
 

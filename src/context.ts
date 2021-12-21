@@ -1,15 +1,15 @@
-import { createContext, useContext } from "react"
+import { createContext, useContext } from 'react';
 
 export type GlobalStateContent = {
-  stateContent: Object,
-  stateview: any,
-  setStateview: (c: any) => void
-}
+  stateContent: Object;
+  stateview: any;
+  setStateview: (c: any) => void;
+};
 
 export const StateContext = createContext<GlobalStateContent>({
   stateContent: {}, // set a default value
   stateview: null,
-  setStateview: () => { },
-})
+  setStateview: () => {},
+});
 
-export const useStateContext = () => useContext(StateContext)
+export const useStateContext = () => useContext(StateContext);

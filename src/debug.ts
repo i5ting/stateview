@@ -1,6 +1,5 @@
-
-import IDebug from "debug";
+import IDebug from 'debug';
 
 export const Debug = (content: any) => {
-   return IDebug(content)
-}
+  return IDebug(content);
+};
