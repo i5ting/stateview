@@ -60,6 +60,8 @@ export const Stateview = React.forwardRef((props: any, ref: any) => {
     useLayoutEffect(() => {
         // show default
         let d = instance[props.default]
+        debug("useLayoutEffect d")
+        debug(d)
         let _component = d.component
         if (props.data) {
             _component = React.cloneElement(
