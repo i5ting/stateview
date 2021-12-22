@@ -2,6 +2,11 @@
 
 ## 什么是多状态视图？
 
+<div align="center">
+  <img src="https://img.alicdn.com/imgextra/i1/O1CN01SLfF1z1V78ToX9dJo_!!6000000002605-2-tps-1560-756.png"/>
+</div>
+<br />
+
 - 首先解决多状态问题
 - 其次留好低代码的可能性
 
