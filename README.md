@@ -53,6 +53,7 @@
 - 示例1：最小示例，只有Logined和UnLogin二个状态，纯UI展示型，通过stateview.show切换视图
 - 示例2：通过stateview.datashow切换状态来控制视图展示，视图组件在切换的时候，根据props.data进行渲染
 - 示例3：嵌套示例，主要演示复杂场景里多状态视图切换。
+- 示例4：分组示例，主要演示复杂场景同时存在多个Stateview命名空间冲突问题。
 
 ### 最小示例
 
@@ -191,7 +192,7 @@ export function Logined(props: any) {
 
 ### 分组示例
 
-分组表达，通过window.stateview['alfred']，具体方法和window.stateview上的一样。
+分组表达，主要解决复杂场景同时存在多个Stateview命名空间冲突问题。通过window.stateview['alfred']，具体方法和window.stateview上的一样。
 
 ```js
 export default (props: any) => {
