@@ -189,6 +189,37 @@ export function Logined(props: any) {
 }
 ```
 
+### 分组示例
+
+分组表达，通过window.stateview['alfred']，具体方法和window.stateview上的一样。
+
+```js
+export default (props: any) => {
+  const debug = Debug("example1")
+
+  function unlogin() {
+    debug('unlogin')
+    window.stateview['alfred'].show('unlogin')
+  }
+
+  function logined() {
+    debug('logined')
+    window.stateview['alfred'].show('logined')
+  }
+
+  return (
+    <Stateview default='unlogin' group='alfred'>
+      <Layer state='logined'>
+        <h1>Logined, <button onClick={unlogin}>go to UnLogin</button></h1>
+      </Layer>
+      <Layer state='unlogin'>
+        <h1 >UnLogin, <button onClick={logined}>go to Logined</button></h1>
+      </Layer>
+    </Stateview>
+  );
+}
+```
+
 ## 文档
 
 - [Introduction](./docs/introduction.md)
