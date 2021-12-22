@@ -1,4 +1,4 @@
-import React, { Fragment, useLayoutEffect, useState, useRef } from 'react';
+import React, { Fragment, useLayoutEffect, useState } from 'react';
 import { Debug } from './debug';
 import { getQueryStringByName } from './utils';
 import { SState } from './state';
@@ -12,15 +12,17 @@ var groups: any = {}
 
 export const Stateview = React.forwardRef((props: any, ref: any) => {
     const [visibaleComponent, setVisibaleComponent] = useState(0);
-    // const states = getStates(props.children); 
+
     let states: any = []
     let group: string = props.group
     let hasGroupName: Boolean = (group !== undefined)
     let instance: any = hasGroupName ? GlobalStateMapping[group] : GlobalStateMapping
-    console.dir(group)
-    if (!instance) instance = {}
 
-    if (hasGroupName) groups[group] = true
+    if (!instance) instance = {}
+    if (hasGroupName) {
+        debug('group name = ' + group)
+        groups[group] = true
+    }
     // states.for()
     React.Children.forEach(props.children, child => {
         // const childType = { ...child.type }
@@ -42,10 +44,7 @@ export const Stateview = React.forwardRef((props: any, ref: any) => {
         }
     })
 
-    const stateviewRef = useRef(null);
-
     const sState = SState({
-        ref: stateviewRef,
         GlobalStateMapping: GlobalStateMapping
     } as ICconfig)
 

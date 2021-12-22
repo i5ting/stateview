@@ -10,7 +10,5 @@ export interface GlobalStateMapping {
 }
 
 export interface ICconfig {
-    ref?: any;
     GlobalStateMapping?: any;
-    component?: any;
 }
