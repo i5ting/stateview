@@ -1,12 +1,11 @@
 import React from 'react';
-import { Stateview, Layer, useStateContext } from '~/index';
+import { Stateview, Layer } from '~/index';
 import { Play0, Play1, Like0, Like1 } from './icon/index';
 
 export function Logined(props: any) {
-  const { stateview } = useStateContext()
 
   function sayHello() {
-    stateview.show('unlogin')
+    window.stateview.show('unlogin')
   }
 
   return <>

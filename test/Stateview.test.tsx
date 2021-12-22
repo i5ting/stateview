@@ -16,10 +16,10 @@ const Example1 = () => {
 
     return (
         <Stateview default='unlogin'>
-            <Layer router='logined'>
+            <Layer state='logined'>
                 <h1>Logined, <button id="go_to_unlogin_button" onClick={unlogin}>go to UnLogin</button></h1>
             </Layer>
-            <Layer router='unlogin'>
+            <Layer state='unlogin'>
                 <h1 >UnLogin, <button id="go_to_logined_button" onClick={logined}>go to Logined</button></h1>;
             </Layer>
         </Stateview>

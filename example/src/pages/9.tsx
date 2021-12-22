@@ -10,16 +10,16 @@ export default (props: any) => {
 
   function unlogin() {
     debug('unlogin')
-    window.stateview.show('unlogin')
+    window.stateview['alfred'].show('unlogin')
   }
 
   function logined() {
     debug('logined')
-    window.stateview.show('logined')
+    window.stateview['alfred'].show('logined')
   }
 
   return (
-    <Stateview default='unlogin'>
+    <Stateview default='unlogin' group='alfred'>
       <Layer state='logined'>
         <h1>Logined, <button onClick={unlogin}>go to UnLogin</button></h1>
       </Layer>

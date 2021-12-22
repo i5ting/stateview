@@ -1,19 +1,27 @@
-import React, { useLayoutEffect, useState, useRef } from 'react';
+import React, { Fragment, useLayoutEffect, useState } from 'react';
 import { Debug } from './debug';
 import { getQueryStringByName } from './utils';
-import { GlobalStateContent, StateContext } from './context';
 import { SState } from './state';
-import type { ICconfig } from './type';
 
 const debug = Debug("stateview.jsx")
 
 var count: number = 0;
 var GlobalStateMapping: any = {}
+var groups: any = {}
 
 export const Stateview = React.forwardRef((props: any, ref: any) => {
     const [visibaleComponent, setVisibaleComponent] = useState(0);
-    // const states = getStates(props.children); 
+
     let states: any = []
+    let group: string = props.group
+    let hasGroupName: Boolean = (group !== undefined)
+    let instance: any = hasGroupName ? GlobalStateMapping[group] : GlobalStateMapping
+
+    if (!instance) instance = {}
+    if (hasGroupName) {
+        debug('group name = ' + group)
+        groups[group] = true
+    }
     // states.for()
     React.Children.forEach(props.children, child => {
         // const childType = { ...child.type }
@@ -28,36 +36,32 @@ export const Stateview = React.forwardRef((props: any, ref: any) => {
             component = child.props.children
         }
 
-        GlobalStateMapping[child.props.state] = {
+        instance[child.props.state] = {
             show: setVisibaleComponent,
             child: child,
             component: component
         }
     })
 
-    const stateviewRef = useRef(null);
-
-    const sState = SState({
-        ref: stateviewRef,
-        GlobalStateMapping: GlobalStateMapping
-    } as ICconfig)
+    const sState = SState(GlobalStateMapping)
 
     if (count === 0) {
         GlobalStateMapping.currentState = props.default
         window.stateview = sState
     }
 
+    if (hasGroupName) {
+        window.stateview[group] = SState(instance)
+    }
+
     debug(count++)
     debug(sState)
 
-    const ctx = {
-        stateContent: props.children,
-        stateview: sState
-    } as GlobalStateContent;
-
     useLayoutEffect(() => {
         // show default
-        let d = GlobalStateMapping[props.default]
+        let d = instance[props.default]
+        debug("useLayoutEffect d")
+        debug(d)
         let _component = d.component
         if (props.data) {
             _component = React.cloneElement(
@@ -74,17 +78,12 @@ export const Stateview = React.forwardRef((props: any, ref: any) => {
     debug(props.children[i])
 
     let isNonBlock = props.nonblock ? true : false
+    let tag = props.tag ? props.tag : isNonBlock ? 'span' : 'div'
 
+    const ele = React.createElement(tag, { ref, ...props }, visibaleComponent);
     return (
-        <StateContext.Provider value={ctx} >
-            {isNonBlock
-                ? <span ref={ref} {...props}>
-                    {visibaleComponent}
-                </span>
-                : <div ref={ref} {...props}>
-                    {visibaleComponent}
-                </div>
-            }
-        </StateContext.Provider>
+        <Fragment >
+            {ele}
+        </Fragment>
     );
 })

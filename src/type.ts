@@ -1,16 +1,10 @@
 export interface IState {
-  show: Function;
-  component: any;
-  [index: string]: any;
+    show: Function;
+    component: any;
+    [index: string]: any;
 }
 
 export interface GlobalStateMapping {
-  currentState: string;
-  [index: string]: any;
-}
-
-export interface ICconfig {
-  ref: any;
-  GlobalStateMapping: GlobalStateMapping;
-  component: any;
+    currentState: string;
+    [index: string]: any;
 }

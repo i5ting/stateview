@@ -1,15 +1,15 @@
 
-import type { IState } from './type';
+// 
 
 declare global {
     interface Window {
-        stateview: IState
+        stateview: any
     }
 }
 
 export * from './type'
 export * from './stateview'
 export * from './layer'
-export * from './context'
+// export * from './context111'
 export * from './state'
 export * from './debug' 

@@ -1,12 +1,10 @@
 import React from 'react';
-import { useStateContext } from '~/index';
 import styles from './player.less';
 
 export function Like1(props: any) {
-  const { stateview } = useStateContext()
 
   function sayHello() {
-    stateview.show('like0')
+    window.stateview.show('like0')
     // stateview.show('notdraw1')
   }
 

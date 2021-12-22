@@ -19,12 +19,12 @@ export default (props: any) => {
   }
 
   return (
-    <Stateview default='unlogin'>
+    <Stateview default='unlogin' tag='h1' nonblock>
       <Layer state='logined'>
-        <h1>Logined, <button onClick={unlogin}>go to UnLogin</button></h1>
+        <div>tag外层是h1，Logined, <button onClick={unlogin}>go to UnLogin</button></div>
       </Layer>
       <Layer state='unlogin'>
-        <h1 >UnLogin, <button onClick={logined}>go to Logined</button></h1>
+        <div>tag外层是h1，UnLogin, <button onClick={logined}>go to Logined</button></div>
       </Layer>
     </Stateview>
   );

@@ -1,13 +1,12 @@
 import React from 'react';
-import { Stateview, Layer, useStateContext } from '~/index';
+import { Stateview, Layer } from '~/index';
 import { CanDraw, NotDraw } from './logined/index';
 import styles from './logined.less';
 
 export function Logined(props: any) {
-  const { stateview } = useStateContext()
 
   function sayHello() {
-    stateview.show('unlogin')
+    window.stateview.show('unlogin')
   }
 
   return <>

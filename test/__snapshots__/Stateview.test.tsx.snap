@@ -1,11 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Stateview /> component Truthy cases Stateview GIVEN <Stateview /> default renders children 1`] = `
+exports[`<Stateview /> component Truthy cases Stateview GIVEN <Stateview /> render default Layer 1`] = `
 <ForwardRef
   default="unlogin"
 >
   <Layer
-    router="logined"
+    state="logined"
   >
     <h1>
       Logined, 
@@ -18,7 +18,7 @@ exports[`<Stateview /> component Truthy cases Stateview GIVEN <Stateview /> defa
     </h1>
   </Layer>
   <Layer
-    router="unlogin"
+    state="unlogin"
   >
     <h1>
       UnLogin, 
