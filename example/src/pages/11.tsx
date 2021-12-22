@@ -10,21 +10,21 @@ export default (props: any) => {
 
   function unlogin() {
     debug('unlogin')
-    window.stateview['alfred'].show('unlogin')
+    window.stateview.show('unlogin')
   }
 
   function logined() {
     debug('logined')
-    window.stateview['alfred'].show('logined')
+    window.stateview.show('logined')
   }
 
   return (
-    <Stateview default='unlogin' group='alfred'>
+    <Stateview default='unlogin' tag='h1' nonblock>
       <Layer state='logined'>
-        <h1>Logined, <button onClick={unlogin}>go to UnLogin</button></h1>
+        <div>tag外层是h1，Logined, <button onClick={unlogin}>go to UnLogin</button></div>
       </Layer>
       <Layer state='unlogin'>
-        <h1 >UnLogin, <button onClick={logined}>go to Logined</button></h1>
+        <div>tag外层是h1，UnLogin, <button onClick={logined}>go to Logined</button></div>
       </Layer>
     </Stateview>
   );

@@ -19,5 +19,6 @@ export default defineConfig({
     { path: '/8', component: '@/pages/8' },
     { path: '/9', component: '@/pages/9' },
     { path: '/10', component: '@/pages/10' },
+    { path: '/11', component: '@/pages/11' },
   ],
 });
