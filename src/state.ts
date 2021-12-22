@@ -1,10 +1,10 @@
-import type { ICconfig, IState } from './type';
+import type { IState } from './type';
 import React from 'react';
 import { Debug } from './debug';
 
 const debug = Debug("src/state.ts")
 
-export const SState = (config: ICconfig) => {
+export const SState = (config: any) => {
     // 处理配置项
 
     // 对外行为
@@ -15,20 +15,20 @@ export const SState = (config: ICconfig) => {
             setVisibaleComponent(c)
         },
         _setCurrent(path: string) {
-            config.GlobalStateMapping.currentState = path
+            config.currentState = path
         },
         /**
          * 获取所有States信息
          */
         getStates() {
-            const states = Object.keys(config.GlobalStateMapping)
+            const states = Object.keys(config)
             return states
         },
         /**
          * 根据path，获取State信息
          */
         getStateBy(path: string) {
-            let state = config.GlobalStateMapping[path] as IState;
+            let state = config[path] as IState;
             return state
         },
         /**
@@ -46,7 +46,7 @@ export const SState = (config: ICconfig) => {
             let states = this.getStates();
 
             // 如果状态一样，则无需刷新
-            if (path === config.GlobalStateMapping.currentState) {
+            if (path === config.currentState) {
                 console.warn("状态一样，无需刷新")
                 return
             }
@@ -81,7 +81,7 @@ export const SState = (config: ICconfig) => {
             let states = this.getStates();
 
             // 如果状态一样，则无需刷新
-            if (path === config.GlobalStateMapping.currentState) {
+            if (path === config.currentState) {
                 console.warn("状态一样，无需刷新")
                 return
             }

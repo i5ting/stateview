@@ -2,7 +2,6 @@ import React, { Fragment, useLayoutEffect, useState } from 'react';
 import { Debug } from './debug';
 import { getQueryStringByName } from './utils';
 import { SState } from './state';
-import type { ICconfig } from './type';
 
 const debug = Debug("stateview.jsx")
 
@@ -44,9 +43,7 @@ export const Stateview = React.forwardRef((props: any, ref: any) => {
         }
     })
 
-    const sState = SState({
-        GlobalStateMapping: GlobalStateMapping
-    } as ICconfig)
+    const sState = SState(GlobalStateMapping)
 
     if (count === 0) {
         GlobalStateMapping.currentState = props.default
@@ -54,9 +51,7 @@ export const Stateview = React.forwardRef((props: any, ref: any) => {
     }
 
     if (hasGroupName) {
-        window.stateview[group] = SState({
-            GlobalStateMapping: instance
-        })
+        window.stateview[group] = SState(instance)
     }
 
     debug(count++)

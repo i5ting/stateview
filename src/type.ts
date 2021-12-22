@@ -8,7 +8,3 @@ export interface GlobalStateMapping {
     currentState: string;
     [index: string]: any;
 }
-
-export interface ICconfig {
-    GlobalStateMapping?: any;
-}
