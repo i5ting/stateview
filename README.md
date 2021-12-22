@@ -155,13 +155,11 @@ unlogin
 
 ```js
 import React from 'react';
-import { useStateContext } from 'stateview';
 
 export function UnLogin(props: any) {
-  const { stateview } = useStateContext()
 
   function sayHello() {
-    stateview.show('logined')
+    window.stateview.show('logined')
   }
 
   return <h1 >UnLogin, <button onClick={sayHello}>{props.name}</button></h1>;
@@ -172,14 +170,13 @@ logined
 
 ```js
 import React from 'react';
-import { Stateview, Layer, useStateContext } from 'stateview';
+import { Stateview, Layer } from 'stateview';
 import { CanDraw, NotDraw } from './logined/index';
 
 export function Logined(props: any) {
-  const { stateview } = useStateContext()
 
   function sayHello() {
-    stateview.show('unlogin')
+    window.stateview.show('unlogin')
   }
 
   return <>

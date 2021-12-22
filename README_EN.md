@@ -90,9 +90,8 @@ Core Concept
 在具体的Layer状态对应的视图组件里使用。
 
 ```js
-import { useStateContext } from 'stateview';
-
-const { stateview } = useStateContext()
+window.stateview
+winodw.stateview[groupName]
 ```
 
 API
@@ -102,8 +101,6 @@ API
 - stateview.getStateBy(path: string) 根据path，获取State信息
 - stateview.getComponentBy(path: string) 根据path，获取Component信息
 - stateview.getStates() 获取所有States信息
-
-当然，你也可以使用是window.stateview替代useStateContext
 
 ### Example
 
@@ -139,13 +136,11 @@ unlogin
 
 ```js
 import React from 'react';
-import { useStateContext } from 'stateview';
 
 export function UnLogin(props: any) {
-  const { stateview } = useStateContext()
 
   function sayHello() {
-    stateview.show('logined')
+    window.stateview.show('logined')
   }
 
   return <h1 >UnLogin, <button onClick={sayHello}>{props.name}</button></h1>;
@@ -156,14 +151,13 @@ logined
 
 ```js
 import React from 'react';
-import { Stateview, Layer, useStateContext } from 'stateview';
+import { Stateview, Layer } from 'stateview';
 import { CanDraw, NotDraw } from './logined/index';
 
 export function Logined(props: any) {
-  const { stateview } = useStateContext()
 
   function sayHello() {
-    stateview.show('unlogin')
+    window.stateview.show('unlogin')
   }
 
   return <>

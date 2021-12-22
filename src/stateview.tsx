@@ -1,7 +1,6 @@
-import React, { useLayoutEffect, useState, useRef } from 'react';
+import React, { Fragment, useLayoutEffect, useState, useRef } from 'react';
 import { Debug } from './debug';
 import { getQueryStringByName } from './utils';
-import { GlobalStateContent, StateContext } from './context';
 import { SState } from './state';
 import type { ICconfig } from './type';
 
@@ -9,11 +8,19 @@ const debug = Debug("stateview.jsx")
 
 var count: number = 0;
 var GlobalStateMapping: any = {}
+var groups: any = {}
 
 export const Stateview = React.forwardRef((props: any, ref: any) => {
     const [visibaleComponent, setVisibaleComponent] = useState(0);
     // const states = getStates(props.children); 
     let states: any = []
+    let group: string = props.group
+    let hasGroupName: Boolean = (group !== undefined)
+    let instance: any = hasGroupName ? GlobalStateMapping[group] : GlobalStateMapping
+    console.dir(group)
+    if (!instance) instance = {}
+
+    if (hasGroupName) groups[group] = true
     // states.for()
     React.Children.forEach(props.children, child => {
         // const childType = { ...child.type }
@@ -28,7 +35,7 @@ export const Stateview = React.forwardRef((props: any, ref: any) => {
             component = child.props.children
         }
 
-        GlobalStateMapping[child.props.state] = {
+        instance[child.props.state] = {
             show: setVisibaleComponent,
             child: child,
             component: component
@@ -47,17 +54,18 @@ export const Stateview = React.forwardRef((props: any, ref: any) => {
         window.stateview = sState
     }
 
+    if (hasGroupName) {
+        window.stateview[group] = SState({
+            GlobalStateMapping: instance
+        })
+    }
+
     debug(count++)
     debug(sState)
 
-    const ctx = {
-        stateContent: props.children,
-        stateview: sState
-    } as GlobalStateContent;
-
     useLayoutEffect(() => {
         // show default
-        let d = GlobalStateMapping[props.default]
+        let d = instance[props.default]
         let _component = d.component
         if (props.data) {
             _component = React.cloneElement(
@@ -76,7 +84,7 @@ export const Stateview = React.forwardRef((props: any, ref: any) => {
     let isNonBlock = props.nonblock ? true : false
 
     return (
-        <StateContext.Provider value={ctx} >
+        <Fragment >
             {isNonBlock
                 ? <span ref={ref} {...props}>
                     {visibaleComponent}
@@ -85,6 +93,6 @@ export const Stateview = React.forwardRef((props: any, ref: any) => {
                     {visibaleComponent}
                 </div>
             }
-        </StateContext.Provider>
+        </Fragment>
     );
 })

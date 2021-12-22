@@ -1,4 +1,4 @@
-import {resolve} from 'path'
+import { resolve } from 'path'
 import { defineConfig } from 'umi';
 export default defineConfig({
   nodeModulesTransform: {
@@ -17,5 +17,7 @@ export default defineConfig({
     { path: '/6', component: '@/pages/6' },
     { path: '/7', component: '@/pages/7' },
     { path: '/8', component: '@/pages/8' },
+    { path: '/9', component: '@/pages/9' },
+    { path: '/10', component: '@/pages/10' },
   ],
 });

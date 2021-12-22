@@ -3,28 +3,6 @@ import React from 'react';
 import { Debug } from './debug';
 
 const debug = Debug("src/state.ts")
-// 获取对象
-//  1. React.Children.forEach(statview.props.children）
-//       注册状态和Layer，statview-ref
-//  2. 实现statview的行为
-//       stateview.setCurrent(this | 'somepath')
-//       stateview.keyframes(from , to)
-//       ...
-//  3. 通过useStateContext，可以在Layer中使用
-// 
-// 示例如下:
-// 
-// function Welcome(props: any) {
-//     const { stateContent, stateview } = useStateContext()
-//     console.dir("Welcome")
-//     console.dir(stateContent)
-// 
-//     // stateview.setCurrent(this | 'somepath')
-//     // stateview.keyframes(from , to)
-// 
-//     return <h1>Hello, { props.name } < /h1>;
-// }
-//  
 
 export const SState = (config: ICconfig) => {
     // 处理配置项

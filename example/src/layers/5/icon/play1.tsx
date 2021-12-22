@@ -1,12 +1,10 @@
 import React from 'react';
-import { useStateContext } from '~/index';
 import styles from './player.less';
 
 export function Play1(props: any) {
-  const { stateview } = useStateContext()
 
   function sayHello() {
-    stateview.show('play0')
+    window.stateview.show('play0')
     // stateview.show('play1')
   }
 

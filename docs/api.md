@@ -3,9 +3,8 @@
 在具体的Layer状态对应的视图组件里使用。
 
 ```js
-import { useStateContext } from 'stateview';
-
-const { stateview } = useStateContext()
+window.stateview
+window.stateview[groupName]
 ```
 
 API
@@ -15,5 +14,3 @@ API
 - stateview.getStateBy(path: string) 根据path，获取State信息
 - stateview.getComponentBy(path: string) 根据path，获取Component信息
 - stateview.getStates() 获取所有States信息
-
-当然，你也可以使用是window.stateview替代useStateContext
