@@ -82,17 +82,12 @@ export const Stateview = React.forwardRef((props: any, ref: any) => {
     debug(props.children[i])
 
     let isNonBlock = props.nonblock ? true : false
+    let tag = props.tag ? props.tag : isNonBlock ? 'span' : 'div'
 
+    const ele = React.createElement(tag, { ref, ...props }, visibaleComponent);
     return (
         <Fragment >
-            {isNonBlock
-                ? <span ref={ref} {...props}>
-                    {visibaleComponent}
-                </span>
-                : <div ref={ref} {...props}>
-                    {visibaleComponent}
-                </div>
-            }
+            {ele}
         </Fragment>
     );
 })

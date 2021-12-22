@@ -11,6 +11,7 @@ import { Stateview, Layer } from 'stateview';
   - 属性
     - default='unlogin' 默认状态
     - nonblock 是否为块级元素，默认div，如果有nonblock，显示为span
+    - group 分组名称
 - Layer组件
   - 属性
     - state='logined' 状态名称
