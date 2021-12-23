@@ -5,7 +5,7 @@ import { Logined, UnLogin } from '../layers/10';
 import styles from './index.less';
 
 /**
- * 嵌套Demo：3个状态切换 
+ * 嵌套+分组：首层同时并列2个Stateview 
  */
 export default () => {
   return (

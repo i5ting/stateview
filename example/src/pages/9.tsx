@@ -3,7 +3,7 @@ import React from 'react';
 import { Stateview, Layer, Debug } from '~/index';
 
 /**
- * 最简单的Demo：2个状态切换 
+ * 最简单的分组Demo：2个状态切换 
  */
 export default (props: any) => {
   const debug = Debug("example1")

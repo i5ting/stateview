@@ -9,12 +9,12 @@ export default (props: any) => {
 
   function unlogin() {
     debug('unlogin')
-    stateview.show('unlogin')
+    window.stateview.show('unlogin')
   }
 
   function logined() {
     debug('logined')
-    stateview.show('logined')
+    window.stateview.show('logined')
   }
 
   return (

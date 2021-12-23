@@ -4,7 +4,7 @@ import { Stateview, Layer, Debug } from '~/index';
 
 const Logined = (props: any) => {
   function unlogin() {
-    stateview.datashow('unlogin', { name: 'unlogin i5ting' })
+    window.stateview.datashow('unlogin', { name: 'unlogin i5ting' })
   }
   return (<h1>Logined, <button onClick={unlogin}>{props.data.name}</button></h1>)
 }
@@ -19,7 +19,7 @@ const UnLogin = (props: any) => {
 export default (props: any) => {
 
   function logined() {
-    stateview.datashow('logined', { name: 'logined i5ting' })
+    window.stateview.datashow('logined', { name: 'logined i5ting' })
   }
 
   return (

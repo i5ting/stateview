@@ -3,7 +3,7 @@ import React from 'react';
 import { Stateview, Layer, Debug } from '~/index';
 
 /**
- * 最简单的Demo：2个状态切换 
+ * 自定义tag的Demo：使用h1作为外层包裹tag 
  */
 export default (props: any) => {
   const debug = Debug("example1")
