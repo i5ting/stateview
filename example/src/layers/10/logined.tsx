@@ -1,11 +1,11 @@
 import React from 'react';
-import { Stateview, Layer } from '~/index';
+import { Stateview, Layer, getStateview } from '~/index';
 import { CanDraw, NotDraw } from './logined/index';
 
 export function Logined(props: any) {
 
   function sayHello() {
-    window.stateview.a.show('unlogin')
+    getStateview('a').setViewState('unlogin')
   }
 
   return <>

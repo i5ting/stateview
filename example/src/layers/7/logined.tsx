@@ -1,9 +1,10 @@
 import React from 'react';
+import { setViewState } from '~/index';
 
 export function Logined(props: any) {
 
   function sayHello() {
-    window.stateview.datashow('unlogin', { 'name': 'Logined i5ting' })
+    setViewState('unlogin', { 'name': 'Logined i5ting' })
   }
 
   return <>

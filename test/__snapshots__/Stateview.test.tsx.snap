@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Stateview /> component Truthy cases Stateview GIVEN <Stateview /> render default Layer 1`] = `
-<ForwardRef
+<Stateview
   default="unlogin"
 >
   <Layer
@@ -31,5 +31,5 @@ exports[`<Stateview /> component Truthy cases Stateview GIVEN <Stateview /> rend
     </h1>
     ;
   </Layer>
-</ForwardRef>
+</Stateview>
 `;

@@ -1,10 +1,11 @@
 import React from 'react';
 import styles from './player.less';
+import { setViewState } from '~/index';
 
 export function Like1(props: any) {
 
   function sayHello() {
-    window.stateview.show('p2')
+    setViewState('p2')
     // stateview.show('like0')
     // stateview.show('play1')
     // stateview.show('notdraw1')

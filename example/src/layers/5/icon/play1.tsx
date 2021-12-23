@@ -1,10 +1,11 @@
 import React from 'react';
 import styles from './player.less';
+import { setViewState } from '~/index';
 
 export function Play1(props: any) {
 
   function sayHello() {
-    window.stateview.show('play0')
+    setViewState('play0')
     // stateview.show('play1')
   }
 

@@ -1,17 +1,17 @@
 import { shallow, mount } from 'enzyme';
 import React from 'react';
 // import { act } from 'react-dom/test-utils';
-import { Stateview, Layer } from '../src';
+import { Stateview, Layer, setViewState } from '../src';
 // import type { ExtendablePromise } from '../src/types';
 
 const Example1 = () => {
 
     function unlogin() {
-        window.stateview.show('unlogin')
+        setViewState('unlogin')
     }
 
     function logined() {
-        window.stateview.show('logined')
+        setViewState('logined')
     }
 
     return (

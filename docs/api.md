@@ -2,6 +2,17 @@
 
 在具体的Layer状态对应的视图组件里使用。
 
+推荐API
+
+```js
+import { Stateview, Layer, setViewState, getStateview } from 'stateview';
+```
+
+- setViewState
+- getStateview(group: string).setViewState
+
+原始API
+
 ```js
 window.stateview
 window.stateview[groupName]

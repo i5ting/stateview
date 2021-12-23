@@ -1,21 +1,18 @@
 import React from 'react';
 
-import { Stateview, Layer, Debug } from '~/index';
+import { Stateview, Layer, getStateview } from '~/index';
 
 /**
  * 最简单的分组Demo：2个状态切换 
  */
 export default (props: any) => {
-  const debug = Debug("example1")
 
   function unlogin() {
-    debug('unlogin')
-    window.stateview['alfred'].show('unlogin')
+    getStateview('alfred').setViewState('unlogin')
   }
 
   function logined() {
-    debug('logined')
-    window.stateview['alfred'].show('logined')
+    getStateview('alfred').setViewState('logined')
   }
 
   return (

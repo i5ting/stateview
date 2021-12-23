@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 
-declare interface LayerProps {
+interface LayerProps {
     state: string;
     component?: any;
     children?: any;

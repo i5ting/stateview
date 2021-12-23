@@ -1,21 +1,18 @@
 import React from 'react';
 
-import { Stateview, Layer, Debug } from '~/index';
+import { Stateview, Layer, setViewState } from '~/index';
 
 /**
  * 最简单的Demo：2个状态切换 
  */
-export default (props: any) => {
-  const debug = Debug("example1")
+export default () => {
 
   function unlogin() {
-    debug('unlogin')
-    window.stateview.show('unlogin')
+    setViewState('unlogin')
   }
 
   function logined() {
-    debug('logined')
-    window.stateview.show('logined')
+    setViewState('logined')
   }
 
   return (

@@ -7,8 +7,10 @@ import { Tab } from '../layers/6';
  */
 export default () => {
   return (
-    <Stateview nonblock default='default'>
-      <Layer state='default' component={<Tab />} />
-    </Stateview>
+    <span>
+      <Stateview default='default'>
+        <Layer state='default' component={<Tab />} />
+      </Stateview>
+    </span>
   );
 }

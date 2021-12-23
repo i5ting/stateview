@@ -10,6 +10,6 @@ declare global {
 export * from './type'
 export * from './stateview'
 export * from './layer'
-// export * from './context111'
+export * from './setViewState'
 export * from './state'
 export * from './debug' 

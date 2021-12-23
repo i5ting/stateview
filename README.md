@@ -62,16 +62,19 @@
 ```js
 import React from 'react';
 
-import { Stateview, Layer } from 'stateview';
+import { Stateview, Layer, setViewState } from 'stateview';
 
+/**
+ * 最简单的Demo：2个状态切换 
+ */
 export default () => {
 
   function unlogin() {
-    window.stateview.show('unlogin')
+    setViewState('unlogin')
   }
 
   function logined() {
-    window.stateview.show('logined')
+    setViewState('logined')
   }
 
   return (
@@ -80,25 +83,24 @@ export default () => {
         <h1>Logined, <button onClick={unlogin}>go to UnLogin</button></h1>
       </Layer>
       <Layer state='unlogin'>
-        <h1 >UnLogin, <button onClick={logined}>go to Logined</button></h1>;
+        <h1 >UnLogin, <button onClick={logined}>go to Logined</button></h1>
       </Layer>
     </Stateview>
   );
 }
-```
 
-注意：此时使用的window.stateview
+```
 
 ### 数据示例
 
 ```js
 import React from 'react';
 
-import { Stateview, Layer, Debug } from '~/index';
+import { Stateview, Layer, setViewState } from 'stateview';
 
 const Logined = (props: any) => {
   function unlogin() {
-    window.stateview.datashow('unlogin', { name: 'unlogin i5ting' })
+    setViewState('unlogin', { name: 'unlogin i5ting' })
   }
   return (<h1>Logined, <button onClick={unlogin}>{props.data.name}</button></h1>)
 }
@@ -110,14 +112,16 @@ const UnLogin = (props: any) => {
 export default (props: any) => {
 
   function logined() {
-    window.stateview.datashow('logined', { name: 'logined i5ting' })
+    setViewState('logined', { name: 'logined i5ting' })
   }
 
   return (
-    <Stateview default='unlogin' data={{ name: 'somename' }}>
-      <Layer state='logined' component={<Logined />} />
-      <Layer state='unlogin' component={<UnLogin action={logined} />} />
-    </Stateview>
+    <span>
+      <Stateview default='unlogin' data={{ name: 'somename' }}>
+        <Layer state='logined' component={<Logined />} />
+        <Layer state='unlogin' component={<UnLogin action={logined} />} />
+      </Stateview>
+    </span>
   );
 }
 ```
@@ -156,11 +160,12 @@ unlogin
 
 ```js
 import React from 'react';
+import { setViewState } from 'stateview';
 
 export function UnLogin(props: any) {
 
   function sayHello() {
-    window.stateview.show('logined')
+    setViewState('logined')
   }
 
   return <h1 >UnLogin, <button onClick={sayHello}>{props.name}</button></h1>;
@@ -171,13 +176,13 @@ logined
 
 ```js
 import React from 'react';
-import { Stateview, Layer } from 'stateview';
+import { Stateview, Layer, setViewState } from 'stateview';
 import { CanDraw, NotDraw } from './logined/index';
 
 export function Logined(props: any) {
 
   function sayHello() {
-    window.stateview.show('unlogin')
+    setViewState('unlogin')
   }
 
   return <>
@@ -195,17 +200,21 @@ export function Logined(props: any) {
 分组表达，主要解决复杂场景同时存在多个Stateview命名空间冲突问题。通过window.stateview['alfred']，具体方法和window.stateview上的一样。
 
 ```js
+import React from 'react';
+
+import { Stateview, Layer, getStateview } from 'stateview';
+
+/**
+ * 最简单的分组Demo：2个状态切换 
+ */
 export default (props: any) => {
-  const debug = Debug("example1")
 
   function unlogin() {
-    debug('unlogin')
-    window.stateview['alfred'].show('unlogin')
+    getStateview('alfred').setViewState('unlogin')
   }
 
   function logined() {
-    debug('logined')
-    window.stateview['alfred'].show('logined')
+    getStateview('alfred').setViewState('logined')
   }
 
   return (
@@ -219,6 +228,7 @@ export default (props: any) => {
     </Stateview>
   );
 }
+
 ```
 
 ## 文档

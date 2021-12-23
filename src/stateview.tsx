@@ -9,7 +9,7 @@ var count: number = 0;
 var GlobalStateMapping: any = {}
 var groups: any = {}
 
-export const Stateview = React.forwardRef((props: any, ref: any) => {
+export const Stateview = (props: any) => {
     const [visibaleComponent, setVisibaleComponent] = useState(0);
 
     let states: any = []
@@ -77,13 +77,9 @@ export const Stateview = React.forwardRef((props: any, ref: any) => {
     let i = getQueryStringByName('s')
     debug(props.children[i])
 
-    let isNonBlock = props.nonblock ? true : false
-    let tag = props.tag ? props.tag : isNonBlock ? 'span' : 'div'
-
-    const ele = React.createElement(tag, { ref, ...props }, visibaleComponent);
     return (
         <Fragment >
-            {ele}
+            {visibaleComponent}
         </Fragment>
     );
-})
+}
