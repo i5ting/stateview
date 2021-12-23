@@ -1,6 +1,6 @@
 {
   "name": "stateview",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "a react render solution for Multi-State View.",
   "main": "dist/index.js",
   "module": "dist/stateview.esm.js",
