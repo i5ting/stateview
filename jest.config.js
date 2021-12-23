@@ -7,5 +7,6 @@ module.exports = {
     },
     __DEV__: true
   },
+  testPathIgnorePatterns: ["/node_modules/", "/__fixtures__/"],
   coveragePathIgnorePatterns: ['<rootDir>/src/Augments.d.ts', '<rootDir>/src/tinyWarning.ts', '<rootDir>/src/isThenable.ts']
 };
