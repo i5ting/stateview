@@ -229,7 +229,7 @@ export default (props: any) => {
 - [Concept](./docs/concept.md)
 - [Design](./docs/design.md)
 - [Data](./docs/data.md)
-- [Examples](./examples)
+- [Examples](./example)
 
 ## 运行示例方法
 
