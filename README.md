@@ -30,7 +30,7 @@
 </div>
 <br />
 
-- Compatible with JSX (React/[Remax](https://github.com/remaxjs/remax)/[Taro](https://github.com/NervJS/taro)/[Eva.js](https://github.com/eva-engine/eva.js))
+- Compatible with JSX ([React](https://reactjs.org/)/[Remax](https://github.com/remaxjs/remax)/[Taro](https://github.com/NervJS/taro)/[Eva.js](https://github.com/eva-engine/eva.js))
 - Built-in the Multi-State View with {Stateview , Layer, setViewState }
 - Customize Data Dispatch via React Component props.data
 - Support the Nested Stateview
