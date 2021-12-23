@@ -30,10 +30,9 @@
 </div>
 <br />
 
-- Compatible with the React Component
-- Built-in the Multi-State View with {Stateview , Layer}
-- Customize the Data via React Component props.data
-- Built-in Switch State with show or datashow method
+- Compatible with JSX (React/[Remax](https://github.com/remaxjs/remax)/[Taro](https://github.com/NervJS/taro)/[Eva.js](https://github.com/eva-engine/eva.js))
+- Built-in the Multi-State View with {Stateview , Layer, setViewState }
+- Customize Data Dispatch via React Component props.data
 - Support the Nested Stateview
 
 ## 预览
