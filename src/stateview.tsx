@@ -9,6 +9,8 @@ var count: number = 0;
 var GlobalStateMapping: any = {}
 var groups: any = {}
 
+let show: any;
+
 export const Stateview = React.forwardRef((props: any, ref: any) => {
     const [visibaleComponent, setVisibaleComponent] = useState(0);
 
@@ -37,7 +39,7 @@ export const Stateview = React.forwardRef((props: any, ref: any) => {
         }
 
         instance[child.props.state] = {
-            show: setVisibaleComponent,
+            show: (...args) => show(...args),
             child: child,
             component: component
         }
@@ -72,6 +74,11 @@ export const Stateview = React.forwardRef((props: any, ref: any) => {
             )
         }
         d.show(_component)
+
+        show = (...args) => {
+            setVisibaleComponent(...args)
+        }
+
     }, [])
 
     let i = getQueryStringByName('s')
